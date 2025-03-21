@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Popular;
+use App\Services\Thumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -63,12 +64,15 @@ class PopularController extends Controller
 
         if ($request->file('flag') !== null) {
             $popular->national_flag = $request->file('flag')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$popular->national_flag"));
         }
         if ($request->file('banner') !== null) {
             $popular->banner = $request->file('banner')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$popular->banner"));
         }
         if ($request->file('banner2') !== null) {
             $popular->banner_2 = $request->file('banner2')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$popular->banner_2"));
         }
 
         $popular->name = $request->popular;
@@ -118,12 +122,15 @@ class PopularController extends Controller
 
         if ($request->file('flag') !== null) {
             $popular->national_flag = $request->file('flag')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$popular->national_flag"));
         }
         if ($request->file('banner') !== null) {
             $popular->banner = $request->file('banner')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$popular->banner"));
         }
         if ($request->file('banner2') !== null) {
             $popular->banner_2 = $request->file('banner2')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$popular->banner_2"));
         }
 
         $popular->name = $request->popular;

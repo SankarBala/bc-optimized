@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Services\Thumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -48,6 +49,7 @@ class NewsController extends Controller
 
         if ($request->file('image') !== null) {
             $news->image = $request->file('image')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$news->image"));
         }
 
         $news->title = $request->title;
@@ -103,6 +105,7 @@ class NewsController extends Controller
 
         if ($request->file('image') !== null) {
             $news->image = $request->file('image')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$news->image"));
         }
 
         $news->title = $request->title;

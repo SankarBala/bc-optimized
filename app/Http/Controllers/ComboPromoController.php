@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ComboPromo;
 use App\Models\Popular;
+use App\Services\Thumbnail;
 use Illuminate\Http\Request;
 
 class ComboPromoController extends Controller
@@ -51,6 +52,7 @@ class ComboPromoController extends Controller
 
         if ($request->file('image') !== null) {
             $comboPromo->image = $request->file('image')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$comboPromo->image"));
         }
 
         $comboPromo->save();
@@ -97,7 +99,7 @@ class ComboPromoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, ComboPromo $combo)
-    { 
+    {
         $request->validate([
             'name' => 'string|min:3|max:100|required',
             'image' => 'nullable|image:*|max:2000'
@@ -109,7 +111,8 @@ class ComboPromoController extends Controller
 
         if ($request->file('image') !== null) {
             $combo->image = $request->file('image')->store('public/uploads');
-        } 
+            Thumbnail::generate(storage_path("app/$combo->image"));
+        }
 
         $combo->save();
 

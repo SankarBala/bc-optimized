@@ -6,6 +6,7 @@ use App\Models\Country;
 use App\Services\Thumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class CountryController extends Controller
 {
@@ -64,36 +65,16 @@ class CountryController extends Controller
 
         if ($request->file('flag') !== null) {
             $country->national_flag = $request->file('flag')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$country->national_flag"));
         }
         if ($request->file('banner') !== null) {
             $country->banner = $request->file('banner')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$country->banner"));
         }
         if ($request->file('banner2') !== null) {
             $country->banner_2 = $request->file('banner2')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$country->banner_2"));
         }
-
-
-
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-
-            $timestamp = time();
-            $extension = $image->getClientOriginalExtension();
-            $filename = "{$product->id}_{$timestamp}.{$extension}";
-
-            $path = $image->storeAs('products', $filename, 'public');
-            $product->image = $path;
-            $product->save();
-
-            // Generate thumbnails
-            Thumbnail::generate(storage_path("app/public/products"), $filename);
-        }
-
-
-
-
-
-
 
 
         $country->name = $request->country;
@@ -144,12 +125,15 @@ class CountryController extends Controller
 
         if ($request->file('flag') !== null) {
             $country->national_flag = $request->file('flag')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$country->national_flag"));
         }
         if ($request->file('banner') !== null) {
             $country->banner = $request->file('banner')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$country->banner"));
         }
         if ($request->file('banner2') !== null) {
             $country->banner_2 = $request->file('banner2')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$country->banner_2"));
         }
 
         $country->name = $request->country;
@@ -159,6 +143,8 @@ class CountryController extends Controller
         $country->status = $request->status;
 
         $country->save();
+
+        return redirect()->back();
         return redirect()->route('admin.country.index');
     }
 

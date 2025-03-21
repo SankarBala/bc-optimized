@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HotCountry;
+use App\Services\Thumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -61,15 +62,21 @@ class HotCountryController extends Controller
 
         $hotCountry = new HotCountry();
 
+
         if ($request->file('flag') !== null) {
             $hotCountry->national_flag = $request->file('flag')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$hotCountry->national_flag"));
         }
         if ($request->file('banner') !== null) {
             $hotCountry->banner = $request->file('banner')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$hotCountry->banner"));
         }
         if ($request->file('banner2') !== null) {
             $hotCountry->banner_2 = $request->file('banner2')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$hotCountry->banner_2"));
         }
+
+
 
         $hotCountry->name = $request->hotCountry;
         $hotCountry->nameBangla = $request->countryBangla;
@@ -119,13 +126,17 @@ class HotCountryController extends Controller
 
         if ($request->file('flag') !== null) {
             $hotCountry->national_flag = $request->file('flag')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$hotCountry->national_flag"));
         }
         if ($request->file('banner') !== null) {
             $hotCountry->banner = $request->file('banner')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$hotCountry->banner"));
         }
         if ($request->file('banner2') !== null) {
             $hotCountry->banner_2 = $request->file('banner2')->store('public/uploads');
+            Thumbnail::generate(storage_path("app/$hotCountry->banner_2"));
         }
+
 
         $hotCountry->name = $request->hotCountry;
         $hotCountry->nameBangla = $request->countryBangla;
