@@ -19,6 +19,7 @@ class CreatePopularsTable extends Migration
             $table->string('nameBangla')->nullable();
             $table->string('national_flag')->nullable();
             $table->string('banner')->nullable();
+            $table->string('banner_2')->nullable();
             $table->text('content')->nullable();
             $table->text('contentBangla')->nullable();
             $table->boolean('active')->default(0);
