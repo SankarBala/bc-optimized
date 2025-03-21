@@ -815,6 +815,7 @@ CREATE TABLE `populars` (
   `nameBangla` varchar(255) DEFAULT NULL,
   `national_flag` varchar(255) DEFAULT NULL,
   `banner` varchar(255) DEFAULT NULL,
+  `banner_2` varchar(255) DEFAULT NULL,
   `content` text DEFAULT NULL,
   `contentBangla` text DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 0,
