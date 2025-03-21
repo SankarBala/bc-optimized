@@ -1,0 +1,46 @@
+<?php
+
+
+return [
+
+    'welcome' => '',
+    'visaexpert' => 'Leading Visa & Immigration Consultant',
+    'agent' => 'Visa processing from Bangladesh can be challenging, with each country having unique rules and requirements. Bengal Consultancy simplifies the visa process, ensuring a smooth, hassle-free experience. Whether you\'re applying for a student visa, work visa, business visa, or tourist visa, we match your qualifications with the right visa scheme for success. We proudly represent top global universities and institutions, helping students and professionals achieve their migration goals with confidence and ease.',
+    'visaexpert2' => 'Looking for a Reliable Visa Solution?',
+    'agent2' => 'At Bengal Consultancy, our motto is "We Provide Solutions." No matter the challenge, we offer expert guidance to help you secure a hassle-free visa. While many visa agencies operate in Bangladesh, only a few are truly transparent and reliable as— Bengal Consultancy! Trust us to find the best and fastest route to your Visa Success.',
+    'visaexpert3' => 'Get a free visa assessment and expert guidance! Consult Bengal Consultancy’s experienced advisors for personalized visa solutions. Book your one-on-one session today and start your journey toward a successful visa approval!',
+    'getAppointment' => 'ask  your  QUESTION',
+    'anInstitution' => 'WE PROVIDE SOLUTIONS',
+    'onlineAppointment' => 'Study Abroad',
+    'onlineAppointment2' => 'Turn your study abroad dream into reality! Get Scholarships, top University admissions, and expert visa support. We connect you with world-renowned Universities for a successful journey.',
+    'vexpert' => 'Visa Expert',
+    'vexpert2' => 'We guide you to the best visa options, ensuring a smooth visa process and a successful future in your dream country.',
+    'applyOnline' => 'Migration/ Permanent Residency (PR)',
+    'applyOnline2' => 'Receive personalized guidance for migration and permanent residency (PR). Book a one-on-one visa counseling session with our experts for tailored solutions to get successful visas.',
+    'foreignOffice' => 'Global Presence',
+    'foreignOffice2' => 'With local representatives in the Canada, Australia, Italy, and across Europe, Bengal Consultancy maintains strong connections with top universities, offering personalized support and direct liaison for our client’s success.',
+    'completedVisa' => 'completed visa',
+    'yourTrastedCenter' => 'Your Trusted Visa Counselling Center',
+    'ourPromicess' => 'We are committed to resolve your Issue by the best way',
+    'ourWorkers' => 'Our Counselors are Ammicable and Experienced',
+    'ourCommitment' => 'We are committed to provide quality services',
+    'ourService' => 'Our Services',
+    'ourServiceText' => 'Expert Visa Guidance for a Hassle-Free Experience!   At Bengal Consultancy, our experienced visa counselors ensure a smooth and successful visa process. We carefully assess your documents, correct mistakes, and provide personalized solutions tailored to your unique situation. Whether you need student, work, business, or travel visas, we offer customized visa support to help you build a strong, error-free visa application for quick approval.',
+    'ourSupport' => 'We provide logistic support at different countries',
+    'ourAdvice' => 'We provide best advice and active support to solve your necessity',
+    'moreAboutMe' => 'Learn more about us',
+    'allSuggession' => 'Your required all visa support',
+    'secure100' => 'We provide services with 100% security',
+    'tourist' => 'Tourist Visa',
+    'business' => 'Business Visa',
+    'medical' => 'Medical Visa',
+    'study' => 'Study Vis',
+    'transit' => 'Transit Visa',
+    'yourFavCountry' => 'Your chosen country',
+    'seeDetails' => 'See details',
+    'whyLikeUS' => 'Why do you chose  us?',
+    'client' => 'Client',
+    'ambassy' => 'University',
+    'country' => 'Country'
+
+];
